@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vanguard Submission</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div id="menu-btn">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a>
+                    <!-- First Tier Drop Down --> 
+                    <ul>
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                    </ul>
+                </li>
+    
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="intro">
+                <p class="intro__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img class="intro__image" src="images/man.jpg" alt="">
+            </div>
+            <div class="search" id="search-container" >
+                <span id="close">X</span>
+                <form class="search__form">
+                    <input class="search__input" id="search-input"  type="text" placeholder="Type in some lorum ipsum (sit, amet, dolor, etc.)">
+                    <button class="search__btn" id="search-btn" type="submit"><img src="./images/search.jpg" alt="search"></button>
+                    
+                </form>
+                <p class="search__note">Note: data API is fetched <em>jsonplaceholder.typicode.com</em>, so the basic service retrieves data in 'lorum ipusm' format. Please try searhing for text such as "sit", "amet", "dolor", etc. </p>
+                <ul class="search__results-container" id="search-results-container">
+                    <!-- search results get injected here -->
+                </ul>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script src="bundle.js"></script>
+</body>
+</html>
