@@ -9,10 +9,11 @@ main {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 4.5rem; }
+  padding: 4.5rem 4.5rem 0 4.5rem; }
   @media (min-width: 800px) {
     .intro {
-      flex-direction: row; } }
+      flex-direction: row;
+      padding: 4.5rem; } }
   @media (min-width: 1200px) {
     .intro {
       width: 100rem; } }
@@ -35,7 +36,7 @@ main {
         height: 42vw; } }
     @media (min-width: 1200px) {
       .intro__image {
-        height: 575px; } }
+        height: 57.5rem; } }
 
 nav {
   position: absolute;
@@ -199,7 +200,7 @@ li > a:only-child:after {
     display: flex;
     align-items: center;
     background: #F8F8F8;
-    margin: 0 auto;
+    margin: 0 2rem;
     padding: 1rem;
     width: 100%; }
     @media (min-width: 600px) {
@@ -242,7 +243,7 @@ li > a:only-child:after {
   .search .search__note {
     font-size: 1.5rem;
     color: #9b9b9b;
-    margin-top: 2rem; }
+    margin: 2rem; }
 
 *,
 *::before,
