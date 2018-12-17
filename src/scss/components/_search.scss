@@ -1,0 +1,124 @@
+@import './../variables';
+@import './../mixins';
+
+.search {
+    position: relative;
+    transition: all 0.3s;
+    top: 3rem;
+
+    @include respond(sm) {
+        top: 0;
+    }
+
+    &.active {
+        position: absolute;
+        background: white;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 10rem 3rem 3rem 3rem;
+        overflow: scroll;
+        z-index: 100;
+
+        @include respond(sm) {
+            padding-top: 3rem;
+        }
+
+        #close {
+            display: flex;
+        }
+    }
+
+
+    &__results-container {
+        color: gray;
+        font-size: 1.7rem;
+        line-height: 3rem;
+        height: auto;
+        justify-self: left;
+        margin-top: 3rem;
+
+        li {
+            list-style: none;
+            background: white;
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid $color-light-gray;
+        }
+    }
+
+    &__info {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        background: #F8F8F8;
+        margin: 0 auto;
+        padding: 1rem;
+        width: 100%;
+
+        @include respond(sm) {
+            width: 80%;
+        }
+
+    }
+
+    &__input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+
+        &::placeholder {
+            color: silver;
+        }
+
+        @include respond(sm) {
+            font-size: 2.5rem;
+        }
+        
+    }
+
+    &__btn {
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 3rem;
+        font-weight: bold;
+        border: 3px solid black;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0.4;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .search__note {
+        font-size: 1.5rem;
+        color: $color-medium-gray;
+        margin-top: 2rem;
+    }
+}
+
+
+

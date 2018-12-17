@@ -8,15 +8,16 @@
 
 html {
     font-size: 62.5%;
+
 }
 
 body {
-    box-sizing: border-box;
+    box-sizing: border-box;    
+    background: white;
 }
 
 .container {
     max-width: 120rem;
     margin: 0 auto;
-    background: green;
     height: 100vh;
 }

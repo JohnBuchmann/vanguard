@@ -10,7 +10,12 @@
 <body>
     <div class="container">
         <nav>
-            <ul>
+            <div id="menu-btn">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+            <ul id="menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Services</a>
                     <!-- First Tier Drop Down --> 
@@ -31,15 +36,18 @@
                 <p class="intro__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <img class="intro__image" src="images/man.jpg" alt="">
             </div>
-            <div class="search">
-                <input id="search" class="search__input" type="text">
-                <div class="search__results" style="background: silver; height: 100vh;">
-
-                </div>
+            <div class="search" id="search-container" >
+                <span id="close">X</span>
+                <form class="search__form">
+                    <input class="search__input" id="search-input"  type="text" placeholder="Type in some lorum ipsum (sit, amet, dolor, etc.)">
+                    <button class="search__btn" id="search-btn" type="submit"><img src="./images/search.jpg" alt="search"></button>
+                    
+                </form>
+                <p class="search__note">Note: data API is fetched <em>jsonplaceholder.typicode.com</em>, so the basic service retrieves data in 'lorum ipusm' format. Please try searhing for text such as "sit", "amet", "dolor", etc. </p>
+                <ul class="search__results-container" id="search-results-container">
+                    <!-- search results get injected here -->
+                </ul>
             </div>
-                
-            
-            
         </main>
     </div>
 

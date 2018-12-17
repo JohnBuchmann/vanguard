@@ -1,67 +1,171 @@
 @import './../variables';
+@import './../mixins';
 
 
-// MENU BAR (DROP DOWN MENUS)
+// MENU BAR
 // #####################################
 
 nav {
-	background-color: $color-medium-gray;
-}
+    position: absolute;
+    width: 100vw;
+    height: auto;
+	background: rgba(0,0,0,0.9);
+	border-bottom: 2px solid #e4e4e4;
 
-nav ul {
-	padding: 0;
-  	margin: 0;
-	list-style: none;
-	position: relative;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: orange;
+	@include respond(sm) {
+		display: flex;
+		position: relative;
+		height: 5rem;
+		background: white;
 	}
 
+	> ul {
+		display: none; // hidden by default. Shown on mobile when clicking menu button, or always visible on larger screens
+	}
 
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
-}
+	ul {
+		flex-direction: column;
+		width: 100%;
+		padding: 0 0 2rem 0;
+		margin: 0;
+		list-style: none;
+		position: relative;
+		
+		@include respond(sm) {
+			display: flex;
+			flex-direction: row;
+			width: auto;
+		}
 
-nav a:hover { 
-	background-color: #000000; 
-}
+		&.active {
+			display: flex;
+			margin-top: 6rem;
 
-/* Hide Dropdowns by Default */
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px; /* the height of the main nav */
-}
+			@include respond(sm) {
+				margin-top: 0; // in case responsive menu is open and you drag the browser wide
+			}
+		}
+
+		li {
+			display:inline-block;
+
+			&:hover > ul {
+				display:inherit;
+			}
+		}
+
+		ul {
+			@include respond(sm) {
+				display: none;
+				position: absolute; 
+				top: 5rem;
+				background: $color-light-gray;
+			}
+
+			li {
+				float:none;
+				display:list-item;
+				position: relative;
+				margin-left: 4rem;
+
+				@include respond(sm) {
+					width:17rem;
+					margin-left: 0;
+				}
+			}
+		}
+	}
 	
-/* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
+
+	a {
+		display:block;
+		padding:0 3rem 0 2rem;	
+		color:white;
+		font-size:1.5rem;
+		line-height: 5rem;
+		text-decoration:none;
+
+		@include respond(sm) {
+			color: black;
+		}
+
+		&:hover { 
+			background-color: rgba(0, 0, 0, 0.1); 
+		}
+
+		&:only-child {
+			padding: 0 2rem;
+		}
+	}
 }
 
-/* Second, Third and more Tiers	*/
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
+
+// DROPDOWN ARROW (on larger screens)
+// #####################################
+
+li > a:after { 
+	width: 0.7rem;
+	height: 0.7rem;
+	position: absolute;
+	top: 60%;
+	border: 2px solid;
+	border-color: transparent transparent $color-primary $color-primary;
+	transform: rotate(-45deg);
+	margin-top: -0.8rem;
+	margin-left: 0.9rem;
+
+	@include respond(sm) {
+		content: '';
+	}
+}
+li > a:only-child:after { 
+	content: ''; 
+	position: static;
+	border: none;
 }
 
+
+// HAMBURGER MENU BUTTON
+// #####################################
+
+#menu-btn {
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    margin: 1rem;
+    transition: all .7s ease;
+    position: absolute;
+	z-index: 100;
 	
-/* Change this in order to change the Dropdown symbol */
-li > a:after { content:  ' +'; }
-li > a:only-child:after { content: ''; }
+	@include respond(sm) {
+		display: none;
+	}
+}
+
+.bar {
+    display: block;
+    height: 3px;
+    width: 2.5rem;
+    background: black;
+    margin: 6px auto;
+    transition: all .7s ease;
+}
+
+.middle {
+    margin: 0 auto;
+}
+
+#menu-btn.active .top {
+	transform: translateY(9px) rotateZ(45deg);
+	background: white;
+}
+
+#menu-btn.active .bottom {
+	transform: translateY(-9px) rotateZ(-45deg);
+	background: white;
+}
+
+#menu-btn.active .middle {
+	width: 0;
+	background: white;
+}
