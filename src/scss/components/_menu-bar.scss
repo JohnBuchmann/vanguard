@@ -140,6 +140,21 @@ li > a:only-child:after {
 	@include respond(sm) {
 		display: none;
 	}
+
+	&.active .top {
+		transform: translateY(9px) rotateZ(45deg);
+		background: white;
+	}
+
+	&.active .bottom {
+		transform: translateY(-9px) rotateZ(-45deg);
+		background: white;
+	}
+
+	&.active .middle {
+		width: 0;
+		background: white;
+	}
 }
 
 .bar {
@@ -153,19 +168,4 @@ li > a:only-child:after {
 
 .middle {
     margin: 0 auto;
-}
-
-#menu-btn.active .top {
-	transform: translateY(9px) rotateZ(45deg);
-	background: white;
-}
-
-#menu-btn.active .bottom {
-	transform: translateY(-9px) rotateZ(-45deg);
-	background: white;
-}
-
-#menu-btn.active .middle {
-	width: 0;
-	background: white;
 }

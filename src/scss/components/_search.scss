@@ -3,7 +3,7 @@
 
 .search {
     position: relative;
-    transition: all 0.3s;
+    transition: all 0.6s;
     top: 3rem;
 
     @include respond(sm) {
@@ -59,10 +59,10 @@
         background: #F8F8F8;
         margin: 0 2rem;
         padding: 1rem;
-        width: 100%;
+        width: 90%;
 
         @include respond(sm) {
-            width: 80%;
+            width: 92%;
         }
 
     }
@@ -116,7 +116,7 @@
     .search__note {
         font-size: 1.5rem;
         color: $color-medium-gray;
-        margin: 2rem;
+        margin: 2rem 0;
     }
 }
 
