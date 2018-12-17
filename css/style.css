@@ -160,7 +160,7 @@ li > a:only-child:after {
 
 .search {
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.6s;
   top: 3rem; }
   @media (min-width: 600px) {
     .search {
@@ -202,10 +202,10 @@ li > a:only-child:after {
     background: #F8F8F8;
     margin: 0 2rem;
     padding: 1rem;
-    width: 100%; }
+    width: 90%; }
     @media (min-width: 600px) {
       .search__form {
-        width: 80%; } }
+        width: 92%; } }
   .search__input {
     flex: 1;
     background: transparent;
@@ -243,7 +243,7 @@ li > a:only-child:after {
   .search .search__note {
     font-size: 1.5rem;
     color: #9b9b9b;
-    margin: 2rem; }
+    margin: 2rem 0; }
 
 *,
 *::before,
